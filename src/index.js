@@ -4,13 +4,14 @@ import ReactDOM from 'react-dom';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter as Router } from 'react-router-dom'
-import  './components/Login'
+import  Form from './components/Login'
 import './App.css'
 
 ReactDOM.render(
   
   <Router>
     <App />  
+    <Form />
   </Router>,
   document.getElementById('root')
 );
