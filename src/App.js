@@ -15,16 +15,16 @@ import Marketing from './components/Marketing';
 function App() {
   return (
     <>
-    <Route path="/login">
-      <Register></Register>
-    </Route>
-    <Route exact path="/">
-      <Marketing></Marketing>
-    </Route>
+      <Route path="/login">
+        <Register></Register>
+      </Route>
+      <Route exact path="/">
+        <Marketing></Marketing>
+      </Route>
     </>
   );
 }
 
 export default App;
 
-  
+
