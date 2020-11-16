@@ -100,23 +100,10 @@ function Login (props) {
 
 
 
-
-
-
-
         </form>
 
 
-
-
-
-
     )
-
-
-
-
-
 
 }
 
