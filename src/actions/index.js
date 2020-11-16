@@ -24,6 +24,8 @@ export const FETCH_DATA_FAIL = 'fetch_data_fail'
 //         .catch(err => console.log(err))
 // }
 
-export const register = (id) => (dispatch) => {
-    dispatch({ type: REGISTER, payload: id })
+export const login = (user) => (dispatch) => {
+    dispatch({ type: LOGIN, payload:user })
+    // console.log(user.token)
+    localStorage.setItem('token', user.token)
 }

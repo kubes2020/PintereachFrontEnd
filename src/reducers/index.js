@@ -1,15 +1,20 @@
-import { FETCH_DATA, FETCH_DATA_SUCCESS, REGISTER } from '../actions'
+import { FETCH_DATA, FETCH_DATA_SUCCESS, LOGIN, REGISTER } from '../actions'
 
 const initialState = {
     articles: [],
     error: '',
-    isLoggedIn: false,
-    userId: null
 }
 
 export const rootReducer = (state = initialState, action) => {
     // console.log(action)
     switch (action.type) {
+
+        case LOGIN:
+            console.log('loggedIn')
+            return {
+                ...state
+            }
+        
         case REGISTER:
             return {
                 ...state

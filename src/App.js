@@ -17,9 +17,9 @@ const store = createStore(rootReducer, applyMiddleware(thunk))
 function App() {
   return (
     <Provider store={store}>
-      <Route path="/login">
-        <Login></Login>
-      </Route>
+      <Route path="/login" render={(props) => {
+        return <Login {...props}/>
+      }} />
       <Route path="/register" render={(props) => {
         return <Register {...props}/>
       }} />

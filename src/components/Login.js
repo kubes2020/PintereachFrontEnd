@@ -5,8 +5,12 @@ import * as yup from 'yup'
 //import style from 'styled-components'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import '../style/login.css'
+import Axios from 'axios'
 
-function Login (props) {
+import { login } from '../actions'
+import { connect } from 'react-redux'
+
+function Login(props) {
 
     const [buttonDisabled, setButtonDisabled] = useState(true)
 
@@ -26,10 +30,16 @@ function Login (props) {
         })
     }, [user])
 
-    // const handleSubmit = e =>{
-    //     e.preventDefault()
-    // }
-    // Axios HERE
+    const handleSubmit = e => {
+        e.preventDefault()
+        // console.log('click')
+        Axios.post('https://pintereacharticles.herokuapp.com/api/auth/login', user)
+            .then((res) => {
+                console.log(res.data)
+                props.login(res.data)
+            })
+    }
+
     const validateChange = e => {
         yup
             .reach(Schema, e.target.name)
@@ -61,7 +71,7 @@ function Login (props) {
 
     return (
 
-        <form className='login-form'>
+        <form className='login-form' onSubmit={handleSubmit}>
             <h1 className='text-center'>
                 <span className='font-weight-bold'>Pintereach</span>
             </h1>
@@ -92,33 +102,23 @@ function Login (props) {
             </div>
 
 
-            <button type='button' className='btn btn-primary btn-lg btn-block mt-3 mb-3 ' disabled={buttonDisabled}>Log in</button>
+            <button disabled={buttonDisabled} className='btn btn-primary btn-lg btn-block mt-3 mb-3 ' > Login </button>
 
             <div className='text-center pt3'>Need to sign up? Click Register Below</div>
 
             <button type='button' className='btn btn-primary btn-lg btn-block mt-3 mb-3 '>Register</button>
 
-
-
-
-
-
-
         </form>
-
-
-
-
-
 
     )
 
-
-
-
-
-
 }
 
-export default Login
+const mapStateToProps = (state) => {
+    return {
+        ...state
+    }
+}
+
+export default connect(mapStateToProps, { login })(Login)
 
