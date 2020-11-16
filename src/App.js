@@ -18,7 +18,7 @@ function App() {
   return (
     <Provider store={store}>
       <Route path="/login">
-        <Register></Register>
+        <Login></Login>
       </Route>
       <Route exact path="/">
         <Marketing></Marketing>
