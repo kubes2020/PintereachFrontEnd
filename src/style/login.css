@@ -1,17 +1,15 @@
 .login-form {
-    width: 100%;
-    max-width: 330px; 
-    padding: 15px;
-    margin: auto;
-    height: 100%; 
-    
+  width: 100%;
+  max-width: 330px;
+  padding: 15px;
+  margin: auto;
+  height: 100%;
 }
 
 .login-form h1 {
-    color: blueviolet;
+  color: blueviolet;
 }
 
 .form-group input {
-    background-color: #f5f3f0;
-
+  background-color: #f5f3f0;
 }
