@@ -69,7 +69,6 @@ const Register = (props) => {
 
         Axios.post('https://pintereacharticles.herokuapp.com/api/auth/register', user)
             .then((res)=>{
-                console.log(res.data)
                 props.history.push('/login')
             })
             .catch((res) => {

@@ -2,6 +2,7 @@ import Axios from "axios"
 import { axiosWithAuth } from "../utils/axiosWithAuth"
 
 export const LOGIN = 'login_action'
+export const LOGOUT = 'logout_action'
 export const REGISTER = 'register_action'
 export const ADD_ARTICLE = 'add_article_action'
 
@@ -28,4 +29,9 @@ export const login = (user) => (dispatch) => {
     dispatch({ type: LOGIN, payload:user })
     // console.log(user.token)
     localStorage.setItem('token', user.token)
+}
+
+export const logout = () => {
+    localStorage.removeItem('token')
+    dispatch({type: LOGOUT})
 }

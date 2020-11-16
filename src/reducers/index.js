@@ -1,4 +1,4 @@
-import { FETCH_DATA, FETCH_DATA_SUCCESS, LOGIN, REGISTER } from '../actions'
+import { FETCH_DATA, FETCH_DATA_SUCCESS, LOGIN, LOGOUT, REGISTER } from '../actions'
 
 const initialState = {
     articles: [],
@@ -15,10 +15,11 @@ export const rootReducer = (state = initialState, action) => {
                 ...state,
                 userId: action.payload.user.id
             }
-        
-        case REGISTER:
+
+        case LOGOUT:
             return {
-                ...state
+                articles: [],
+                userId:'',
             }
 
         default:
