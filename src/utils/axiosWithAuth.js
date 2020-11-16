@@ -5,10 +5,10 @@ export const axiosWithAuth = () => {
 
     return axios.create({
         // REPLACE THIS WITH THE CORRECT API URL
-        baseURL: 'http://localhost:5000/api',
+        baseURL: 'https://pintereacharticles.herokuapp.com/api/',
         headers: {
             authorization: token
         }
     })
-    
+
 }

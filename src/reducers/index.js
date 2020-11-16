@@ -1,27 +1,18 @@
-import { FETCH_DATA, FETCH_DATA_SUCCESS } from '../actions'
+import { FETCH_DATA, FETCH_DATA_SUCCESS, REGISTER } from '../actions'
 
 const initialState = {
     articles: [],
     error: '',
-    isFetching: false
+    isLoggedIn: false,
+    userId: null
 }
 
 export const rootReducer = (state = initialState, action) => {
     // console.log(action)
     switch (action.type) {
-        case FETCH_DATA:
+        case REGISTER:
             return {
-                ...state,
-                error: '',
-                articles: true
-            }
-
-        case FETCH_DATA_SUCCESS:
-            return {
-                ...state,
-                error: '',
-                isFetching: false,
-                articles: action.payload
+                ...state
             }
 
         default:

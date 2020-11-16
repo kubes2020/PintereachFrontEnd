@@ -1,3 +1,4 @@
+import Axios from "axios"
 import { axiosWithAuth } from "../utils/axiosWithAuth"
 
 export const LOGIN = 'login_action'
@@ -9,16 +10,20 @@ export const FETCH_DATA_SUCCESS = 'fetch_data_success'
 export const FETCH_DATA_FAIL = 'fetch_data_fail'
 
 // Fetch Data, after login is finished, dispatch this function
-export const getData = () => (dispatch) => {
-    dispatch({ type: FETCH_DATA })
+// export const getData = () => (dispatch) => {
+//     dispatch({ type: FETCH_DATA })
 
-    // REPLACE SERVERNAME WITH API CALL, depending on the data results, use id in object number
-    axiosWithAuth().get('SERVERNAME')
-        .then(res => {
-            // console.log(res)
+//     // REPLACE SERVERNAME WITH API CALL, depending on the data results, use id in object number
+//     axiosWithAuth().get('SERVERNAME')
+//         .then(res => {
+//             // console.log(res)
 
-            // REPLACE DATA HERE, CHECK RES AND REPLACE
-            dispatch({ type: FETCH_DATA_SUCCESS, payload: res.data })
-        })
-        .catch(err => console.log(err))
+//             // REPLACE DATA HERE, CHECK RES AND REPLACE
+//             dispatch({ type: FETCH_DATA_SUCCESS, payload: res.data })
+//         })
+//         .catch(err => console.log(err))
+// }
+
+export const register = (id) => (dispatch) => {
+    dispatch({ type: REGISTER, payload: id })
 }

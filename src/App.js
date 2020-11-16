@@ -20,6 +20,9 @@ function App() {
       <Route path="/login">
         <Login></Login>
       </Route>
+      <Route path="/register" render={(props) => {
+        return <Register {...props}/>
+      }} />
       <Route exact path="/">
         <Marketing></Marketing>
       </Route>
