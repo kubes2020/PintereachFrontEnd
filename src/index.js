@@ -7,7 +7,11 @@ import { BrowserRouter as Router } from 'react-router-dom'
 import './App.css'
 
 ReactDOM.render(
-    <App />,
+  <Router>
+
+    <App />
+  </Router>,
+
   document.getElementById('root')
 );
 
