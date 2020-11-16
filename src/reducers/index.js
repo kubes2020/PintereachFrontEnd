@@ -1,3 +1,5 @@
+import { FETCH_DATA, FETCH_DATA_SUCCESS } from '../actions'
+
 const initialState = {
     articles: [],
     error: '',
