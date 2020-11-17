@@ -6,10 +6,7 @@ import AddArticle from '../validation/Article_Schema'
 
 
 function Article (props) {
-
-   
-
-   
+ 
     
     const [ buttonDisabled, setButtonDisabled ] = useState(true)
 
@@ -147,17 +144,17 @@ function Article (props) {
                     <label for="rating">Importance:  </label>
                     <select class="form-control" id="rating" onChange={onChange} name='rating'>
                     <option value=''>---Select a Rating---</option>
-                    <option value='1'>1</option>
-                    <option value='2'>2</option>
-                    <option value='3'>3</option>
-                    <option value='4'>4</option>
                     <option value='5'>5</option>
+                    <option value='4'>4</option>
+                    <option value='3'>3</option>
+                    <option value='2'>2</option>
+                    <option value='1'>1</option>
                     </select>
                     <small id="ratingHelp" class="form-text text-muted">Rating 1 - 5, with 5 being the most of importance</small>
                 </div>
                     
 
-                <button className='btn btn-primary btn-lg btn-block mt-5 mb-5 ' >Add Article</button>  
+                <button className='btn btn-primary btn-lg btn-block mt-5 mb-5 ' disabled={buttonDisabled}>Add Article</button>  
            
     
             </form>         
