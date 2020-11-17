@@ -27,10 +27,14 @@ export const DELETE_ARTICLE = 'delete_action'
 // }
 
 // Login & Logout management
-export const login = (user) => (dispatch) => {
-    dispatch({ type: LOGIN, payload: user })
-    localStorage.setItem('token', user.token)
-    localStorage.setItem('id', user.user.id)
+export const login = (data) => (dispatch) => {
+    dispatch({ type: LOGIN, payload: data })
+
+    // const token = data.token.slice(1,-1)
+
+    // console.log(token)
+    localStorage.setItem('token', data.token)
+    localStorage.setItem('id', data.user.id)
 }
 
 export const logout = () => (dispatch) => {
