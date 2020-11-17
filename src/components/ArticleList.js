@@ -14,11 +14,9 @@ function ArticleList(props) {
         // console.log
     }, [])
 
-    //art_url = {item.art_url}
-
     return (
-        <div>
-            {props.articles.map((item) => {
+        <div className='test'>
+            {props.articles.map((item)=>{
                 return (
                     <ArticleCard
                         id={item.id}
