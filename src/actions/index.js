@@ -66,5 +66,9 @@ export const fetchData = () => (dispatch) => {
 
 export const deleteArticle = (id) => (dispatch) => {
     dispatch({ type: DELETE_ARTICLE, payload: id })
-    
+
+    axiosWithAuth().delete((`arts/${id}`))
+        .then((res) => {
+            console.log(res.data)
+        })
 }
