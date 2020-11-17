@@ -2,52 +2,52 @@ export default function Marketing () {
     return (
         <div>
             <header id="header">
-                <div class="content">
+                <div className="content">
                     <h1><a href="#">Pintereach</a></h1>
                     <p>
                         Pintereach helps you research by<br />
                         enabling you to save and organize<br />
                         articles in to categories to read later.
                     </p>
-                    <ul class="actions">
+                    <ul className="actions">
                         <li>
-                            <a href="/login" class="button primary icon solid fa-sign-in-alt">Login</a>
+                            <a href="/login" className="button primary icon solid fa-sign-in-alt">Login</a>
                         </li>
                         <li>
-                            <a href="#one" class="button icon solid fa-chevron-down scrolly">Learn More</a>
+                            <a href="#one" className="button icon solid fa-chevron-down scrolly">Learn More</a>
                         </li>
                     </ul>
                 </div>
-                <div class="image phone">
-                    <div class="inner"><img src="images/screen.jpg" alt="" /></div>
+                <div className="image phone">
+                    <div className="inner"><img src="images/screen.jpg" alt="" /></div>
                 </div>
             </header>
 
-            <section id="one" class="wrapper style2 special">
-                <header class="major">
+            <section id="one" className="wrapper style2 special">
+                <header className="major">
                     <h2>
                         Sed ipsum magna lorem tempus amet<br />
                         vehicula et gravida elementum
                     </h2>
                 </header>
-                <ul class="icons major">
+                <ul className="icons major">
                     <li>
-                        <span class="icon solid fa-camera-retro"><span class="label">Shoot</span></span>
+                        <span className="icon solid fa-camera-retro"><span className="label">Shoot</span></span>
                     </li>
                     <li>
-                        <span class="icon solid fa-sync"><span class="label">Process</span></span>
+                        <span className="icon solid fa-sync"><span className="label">Process</span></span>
                     </li>
                     <li>
-                        <span class="icon solid fa-cloud"><span class="label">Upload</span></span>
+                        <span className="icon solid fa-cloud"><span className="label">Upload</span></span>
                     </li>
                 </ul>
             </section>
 
-            <section id="two" class="wrapper">
-                <div class="inner alt">
-                    <section class="spotlight">
-                        <div class="image"><img src="images/pic01.jpg" alt="" /></div>
-                        <div class="content">
+            <section id="two" className="wrapper">
+                <div className="inner alt">
+                    <section className="spotlight">
+                        <div className="image"><img src="images/pic01.jpg" alt="" /></div>
+                        <div className="content">
                             <h3>Magna sed ultrices</h3>
                             <p>
                                 Morbi mattis ornare ornare. Duis quam turpis, gravida at leo
@@ -57,9 +57,9 @@ export default function Marketing () {
                             </p>
                         </div>
                     </section>
-                    <section class="spotlight">
-                        <div class="image"><img src="images/pic02.jpg" alt="" /></div>
-                        <div class="content">
+                    <section className="spotlight">
+                        <div className="image"><img src="images/pic02.jpg" alt="" /></div>
+                        <div className="content">
                             <h3>Ultrices nullam aliquam</h3>
                             <p>
                                 Morbi mattis ornare ornare. Duis quam turpis, gravida at leo
@@ -69,9 +69,9 @@ export default function Marketing () {
                             </p>
                         </div>
                     </section>
-                    <section class="spotlight">
-                        <div class="image"><img src="images/pic03.jpg" alt="" /></div>
-                        <div class="content">
+                    <section className="spotlight">
+                        <div className="image"><img src="images/pic03.jpg" alt="" /></div>
+                        <div className="content">
                             <h3>Aliquam sed magna</h3>
                             <p>
                                 Morbi mattis ornare ornare. Duis quam turpis, gravida at leo
@@ -81,30 +81,30 @@ export default function Marketing () {
                             </p>
                         </div>
                     </section>
-                    <section class="special">
-                        <ul class="icons labeled">
+                    <section className="special">
+                        <ul className="icons labeled">
                             <li>
-                                <span class="icon solid fa-camera-retro"><span class="label">Ipsum lorem accumsan</span></span>
+                                <span className="icon solid fa-camera-retro"><span className="label">Ipsum lorem accumsan</span></span>
                             </li>
                             <li>
-                                <span class="icon solid fa-sync"><span class="label">Sed vehicula elementum</span></span>
+                                <span className="icon solid fa-sync"><span className="label">Sed vehicula elementum</span></span>
                             </li>
                             <li>
-                                <span class="icon solid fa-cloud"><span class="label">Elit fusce consequat</span></span>
+                                <span className="icon solid fa-cloud"><span className="label">Elit fusce consequat</span></span>
                             </li>
                             <li>
-                                <span class="icon solid fa-code"><span class="label">Lorem nullam tempus</span></span>
+                                <span className="icon solid fa-code"><span className="label">Lorem nullam tempus</span></span>
                             </li>
                             <li>
-                                <span class="icon solid fa-desktop"><span class="label">Adipiscing amet sapien</span></span>
+                                <span className="icon solid fa-desktop"><span className="label">Adipiscing amet sapien</span></span>
                             </li>
                         </ul>
                     </section>
                 </div>
             </section>
 
-            <section id="three" class="wrapper style2 special">
-                <header class="major">
+            <section id="three" className="wrapper style2 special">
+                <header className="major">
                     <h2>Magna leo sapien gravida</h2>
                     <p>
                         Gravida at leo elementum elit fusce accumsan dui libero, quis
@@ -112,11 +112,11 @@ export default function Marketing () {
                         lectus ultricies eu. In convallis amet leo sapien iaculis efficitur.
                     </p>
                 </header>
-                <ul class="actions special">
+                <ul className="actions special">
                     <li>
-                        <a href="/register" class="button primary icon solid fa-sign-in-alt">Register</a>
+                        <a href="/register" className="button primary icon solid fa-sign-in-alt">Register</a>
                     </li>
-                    <li><a href="/login" class="button">Login</a></li>
+                    <li><a href="/login" className="button">Login</a></li>
                 </ul>
             </section>
         </div>
