@@ -2,15 +2,16 @@ import React, { useEffect, useState } from 'react'
 import * as yup from 'yup'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import '../style/login.css'
+import Axios from 'axios'
 
 const formSchema = yup.object().shape({
     email: yup.string().email('Must be a valid email'),
     password: yup.string().min(4, 'Must be at least 4 characters long')
 })
 
-const Register = () => {
+const Register = (props) => {
 
-    const [ newUsers, setNewUsers ] = useState([])
+    // const [newUsers, setNewUsers] = useState([])
 
     const [user, setUser] = useState({
         email: '',
@@ -27,28 +28,28 @@ const Register = () => {
             .then(valid => {
                 setButtonDisabled(!valid)
             })
-    },[user])
+    }, [user])
 
     const validate = event => {
 
-        let value  = event.target.value;
+        let value = event.target.value;
 
         yup
-            .reach( formSchema, event.target.name )
-            .validate( value )
-            .then( valid => {
+            .reach(formSchema, event.target.name)
+            .validate(value)
+            .then(valid => {
                 setErrors({
-                    ...errors, [ event.target.name ] : ''
-                })                
+                    ...errors, [event.target.name]: ''
+                })
             })
-            .catch( error => {
+            .catch(error => {
                 setErrors({
-                    ...errors, [ event.target.name ] : error.errors[0]
+                    ...errors, [event.target.name]: error.errors[0]
                 })
             })
     }
 
-    const inputChange = event =>  {
+    const inputChange = event => {
 
         event.persist();
 
@@ -57,28 +58,29 @@ const Register = () => {
         let value = event.target.value
 
         setUser({
-            ...user, [ event.target.name ] : value
+            ...user, [event.target.name]: value
         })
 
     }
 
     const formSubmit = event => {
 
-        event.preventDefault();
+        event.preventDefault()
 
-        setNewUsers([ ...newUsers, user ]);
+        Axios.post('https://pintereacharticles.herokuapp.com/api/auth/register', user)
+            .then((res)=>{
+                props.history.push('/login')
+            })
+            .catch((res) => {
+                console.log(res)
+            })
 
-        setUser({
 
-            email: '',
-            password: '',
-
-        })
     }
 
-    const [ buttonDisabled, setButtonDisabled ] = useState(true)
+    const [buttonDisabled, setButtonDisabled] = useState(true)
 
-    return(
+    return (
 
         <form 
             className='login-form' 
@@ -117,7 +119,7 @@ const Register = () => {
                         onChange={inputChange}
                     />
 
-                    { errors.password.length > 0 ? ( <p className='error' > { errors.password } </p> ) : null  }
+                    {errors.password.length > 0 ? (<p className='error' > { errors.password} </p>) : null}
 
                 
             </div>
@@ -129,4 +131,5 @@ const Register = () => {
     )
 }
 
-export default Register;
+
+export default Register

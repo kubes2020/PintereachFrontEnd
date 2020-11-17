@@ -11,7 +11,7 @@ export default function Marketing () {
                     </p>
                     <ul class="actions">
                         <li>
-                            <a href="#" class="button primary icon solid fa-download">Try It</a>
+                            <a href="/login" class="button primary icon solid fa-sign-in-alt">Login</a>
                         </li>
                         <li>
                             <a href="#one" class="button icon solid fa-chevron-down scrolly">Learn More</a>
@@ -114,9 +114,9 @@ export default function Marketing () {
                 </header>
                 <ul class="actions special">
                     <li>
-                        <a href="#" class="button primary icon solid fa-download">Sign Up</a>
+                        <a href="/register" class="button primary icon solid fa-sign-in-alt">Register</a>
                     </li>
-                    <li><a href="#" class="button">Sign In</a></li>
+                    <li><a href="/login" class="button">Login</a></li>
                 </ul>
             </section>
         </div>
