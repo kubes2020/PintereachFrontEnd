@@ -6,8 +6,8 @@ import { Route, Link, useHistory } from 'react-router-dom';
 import { createStore, applyMiddleware } from 'redux'
 import { Provider } from 'react-redux'
 import thunk from 'redux-thunk';
-
 import { rootReducer } from './reducers'
+
 
 import Marketing from './components/Marketing';
 import Register from './components/Register.js'
@@ -77,7 +77,8 @@ function App() {
       <Route path="/register" render={(props) => {
         return <Register {...props} />
       }} />
-      <PrivateRoute exact path="/protected" component={Home} />
+      <PrivateRoute exact path="/home" component={Home} />
+      <PrivateRoute exact path="/add" component={Article} />
       <Route exact path="/">
         <Marketing></Marketing>
       </Route>
