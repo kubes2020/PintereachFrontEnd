@@ -144,11 +144,11 @@ function Article (props) {
                     <label for="rating">Importance:  </label>
                     <select class="form-control" id="rating" onChange={onChange} name='rating'>
                     <option value=''>---Select a Rating---</option>
-                    <option value='1'>1</option>
-                    <option value='2'>2</option>
+                    <option value='5'>1</option>
+                    <option value='4'>2</option>
                     <option value='3'>3</option>
-                    <option value='4'>4</option>
-                    <option value='5'>5</option>
+                    <option value='2'>4</option>
+                    <option value='1'>5</option>
                     </select>
                     <small id="ratingHelp" class="form-text text-muted">Rating 1 - 5, with 5 being the most of importance</small>
                 </div>
