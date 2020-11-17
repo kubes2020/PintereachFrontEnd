@@ -1,3 +1,4 @@
+import { act } from 'react-dom/test-utils'
 import { ADD_ARTICLE, DELETE_ARTICLE, FETCH_DATA, FETCH_DATA_SUCCESS, LOGIN, LOGOUT, REGISTER } from '../actions'
 
 const initialState = {
@@ -50,6 +51,16 @@ export const rootReducer = (state = initialState, action) => {
 
         case DELETE_ARTICLE: 
             console.log(action.payload, 'id')
+            const filteredArticles= state.articles.filter((item)=>{
+                // console.log(item)
+                console.log(item.id)
+                return item.id!==action.payload
+            })
+            console.log('filtered articles', filteredArticles)
+            return {
+                ...state,
+                articles: filteredArticles
+            }
 
         default:
             console.log("default")
