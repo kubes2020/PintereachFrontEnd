@@ -1,12 +1,15 @@
 import { connect } from "react-redux"
 import { Link } from "react-router-dom"
 import ArticleList from "./ArticleList"
+import '../style/home.css'
 
 function Home() {
     return (
         <>
-            <Link to="/add">Add article</Link>
-            <ArticleList></ArticleList>
+            <div className='link-btn'>
+                <Link to="/add">Add an article</Link>
+                <ArticleList></ArticleList>
+            </div>
         </>
     )
 }
