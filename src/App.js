@@ -1,6 +1,7 @@
+import React, { useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import { Route } from 'react-router-dom';
+import { Route, Link, useHistory } from 'react-router-dom';
 
 import { createStore, applyMiddleware } from 'redux'
 import { Provider } from 'react-redux'
@@ -13,12 +14,62 @@ import Register from './components/Register.js'
 import Login from './components/Login'
 import Home from './components/Home';
 import PrivateRoute from './components/PrivateRoute'
-import Article from './components/Article';
-
+import Article from './components/Article'
+import styled from "styled-components";
+// import ArticleCard from './components/ArticleCard'
 const store = createStore(rootReducer, applyMiddleware(thunk))
 
+const MainNav = styled.nav`
+  text-align: right;
+  @media (max-width: 400px){
+    text-align: center;
+  }
+`
+const NavLink = styled(Link)`
+  text-decoration:none;
+  padding: .4% 2%;
+  padding-top:3%;
+  color: white;
+  min-width: 150px;
+  margin: .2%;
+  height:30px;
+  font-size: 0.9rem;
+  justify-content: center;
+  &:hover {
+    color: white;
+    transition: all 0.5s ease-in-out;
+  }
+  @media (max-width: 400px){
+    font-size: 1rem;
+    flex-direction: column;
+  }
+  
+`
+
+
 function App() {
+  const [isLoggedIn, setIsLoggedIn] = useState(false)
+  const history = useHistory()
+
+  const handleLogOut = () =>{
+    localStorage.clear()
+    setIsLoggedIn(false)
+    history.push("/")
+  }
+
+
   return (
+    <>
+    <MainNav>
+      <div className="navcontainer">
+        {isLoggedIn ? <NavLink to="/">Home</NavLink> : null}
+        {isLoggedIn ? <NavLink to="/Article">Add Articles</NavLink> : null}
+        {/* {isLoggedIn ? <Link to="/ArticleCard">Saved Articles</Link> : null} */}
+        {isLoggedIn ? null : <NavLink to="/Login">Login</NavLink>}
+        {isLoggedIn ? null : <NavLink to="/Register">Register</NavLink>}
+        {isLoggedIn ? <NavLink to="/" onClick={ handleLogOut }>Logout</NavLink> : null} 
+      </div>
+    </MainNav>
     <Provider store={store}>
       <Route path="/login" render={(props) => {
         return <Login {...props} />
@@ -32,6 +83,7 @@ function App() {
         <Marketing></Marketing>
       </Route>
     </Provider>
+    </>
   );
 }
 
