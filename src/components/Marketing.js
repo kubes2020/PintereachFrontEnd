@@ -1,11 +1,12 @@
 import { Link } from "react-router-dom";
+// import '...'
 
 export default function Marketing () {
     return (
         <div>
             <header id="header">
                 <div className="content">
-                    <h1><a href="#">Pintereach</a></h1>
+                    <h1><a href="/home">Pintereach</a></h1>
                     <p>
                         Pintereach helps you research by<br />
                         enabling you to save and organize<br />
@@ -116,9 +117,9 @@ export default function Marketing () {
                 </header>
                 <ul className="actions special">
                     <li>
-                        <a href="/register" className="button primary icon solid fa-sign-in-alt">Register</a>
+                        <Link to="/register" className="button primary icon solid fa-sign-in-alt">Register</Link>
                     </li>
-                    <li><a href="/login" className="button">Login</a></li>
+                    <li><Link to="/login" className="button">Login</Link></li>
                 </ul>
             </section>
         </div>

@@ -1,4 +1,4 @@
-import {useEffect } from 'react';
+import { useEffect } from 'react';
 import ArticleCard from './ArticleCard';
 const { connect } = require("react-redux");
 const { fetchData } = require("../actions");
@@ -11,20 +11,23 @@ function ArticleList(props) {
 
     useEffect(() => {
         fetch()
+        // console.log
     }, [])
 
     //art_url = {item.art_url}
 
     return (
         <div>
-            {props.articles.map((item)=>{
+            {props.articles.map((item) => {
                 return (
-                    <ArticleCard 
+                    <ArticleCard
+                        id={item.id}
+                        key={item.id}
                         art_name={item.art_name}
                         art_url={item.art_url}
                         rating={item.rating}
                         category={item.category}
-                />)
+                    />)
             })}
         </div>
     )

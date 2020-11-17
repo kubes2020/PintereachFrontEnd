@@ -1,4 +1,4 @@
-import { ADD_ARTICLE, FETCH_DATA, FETCH_DATA_SUCCESS, LOGIN, LOGOUT, REGISTER } from '../actions'
+import { ADD_ARTICLE, DELETE_ARTICLE, FETCH_DATA, FETCH_DATA_SUCCESS, LOGIN, LOGOUT, REGISTER } from '../actions'
 
 const initialState = {
     articles: [],
@@ -47,6 +47,9 @@ export const rootReducer = (state = initialState, action) => {
                 articles: newArticles,
                 isLoading: false
             }
+
+        case DELETE_ARTICLE: 
+            console.log(action.payload, 'id')
 
         default:
             console.log("default")

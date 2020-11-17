@@ -66,5 +66,5 @@ export const fetchData = () => (dispatch) => {
 
 export const deleteArticle = (id) => (dispatch) => {
     dispatch({ type: DELETE_ARTICLE, payload: id })
-
+    
 }

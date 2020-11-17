@@ -117,7 +117,7 @@ function Article(props) {
             <div class="form-group">
                 <label for="catagory">Catgory:  </label>
                 <select class="form-control" id="catagory" onChange={onChange} name='catagory'>
-                    <option value=''>---Select a Catagory---</option>
+                    <option value=''>---Select a Category---</option>
                     <option value='Automotive'>Automotive</option>
                     <option value='Economics'>Economics</option>
                     <option value='Education'>Education</option>
