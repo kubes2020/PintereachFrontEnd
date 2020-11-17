@@ -38,8 +38,10 @@ function Login(props) {
             .then((res) => {
                 console.log(res.data)
                 props.login(res.data)
+            }).then((res)=>{
+
+                props.history.push('/home')
             })
-        props.history.push('/home')
     }
 
     const validateChange = e => {
