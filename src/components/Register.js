@@ -82,40 +82,37 @@ const Register = (props) => {
 
     return (
 
-        <form
-            className='login-form'
-            onSubmit={formSubmit}
-        >
+        <form 
+            className='login-form' 
+            onSubmit={formSubmit}>
 
-            <h1 className=' text-center'>
-                <span className='font-weight-bold' >Pintereach</span>
+            <h1 className='text-center'>
+                <span className='font-weight-bold'>Pintereach</span>
             </h1>
 
             <h2 className='text-center'>Register</h2>
 
-            <div className='form-group' >
-                <label for='email'>
-                    Email:
+            <div className='form-group' > 
+                <label htmlFor='emailId'>Email:</label>
                     <input
                         name='email'
                         type='email'
+                        id='emailId'
                         class='form-control'
                         placeholder='Create an email'
                         value={user.email}
                         onChange={inputChange}
                     />
 
-                    {errors.email.length > 0 ? (<p className='error' > { errors.email} </p>) : null}
-
-                </label>
+                    { errors.email.length > 0 ? ( <p className='error' > { errors.email } </p> ) : null  }
             </div>
 
             <div className='form-group'>
-                <label for='password'>
-                    Password:
+                <label htmlFor='passwordId'>Password:</label>
                     <input
                         type='password'
                         name='password'
+                        id='passwordId'
                         class='form-control text-center'
                         placeholder='Create an password'
                         value={user.password}
@@ -124,10 +121,10 @@ const Register = (props) => {
 
                     {errors.password.length > 0 ? (<p className='error' > { errors.password} </p>) : null}
 
-                </label>
+                
             </div>
 
-            <button disabled={buttonDisabled} className='btn btn-primary btn-lg btn-block mt-3 mb-3 ' > Confirm Registration </button>
+            <button disabled = {buttonDisabled} className='btn btn-primary btn-lg btn-block mt-3 mb-3' > Confirm Registration </button>
 
         </form>
 
