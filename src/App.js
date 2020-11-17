@@ -18,10 +18,10 @@ function App() {
   return (
     <Provider store={store}>
       <Route path="/login" render={(props) => {
-        return <Login {...props}/>
+        return <Login {...props} />
       }} />
       <Route path="/register" render={(props) => {
-        return <Register {...props}/>
+        return <Register {...props} />
       }} />
       <Route exact path="/">
         <Marketing></Marketing>

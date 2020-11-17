@@ -75,7 +75,6 @@ const Register = (props) => {
                 console.log(res)
             })
 
-
     }
 
     const [buttonDisabled, setButtonDisabled] = useState(true)
