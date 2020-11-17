@@ -114,7 +114,7 @@ const Register = (props) => {
                         type='password'
                         name='password'
                         id='passwordId'
-                        class='form-control text-center'
+                        class='form-control'
                         placeholder='Create an password'
                         value={user.password}
                         onChange={inputChange}
