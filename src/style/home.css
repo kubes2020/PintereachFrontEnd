@@ -1,0 +1,27 @@
+.link-btn{
+
+    font: bold 20px Arial;
+    text-align: center;
+    text-decoration: none;
+    background-color: #EEEEEE;
+    
+    padding: 2px 6px 2px 6px;
+    border-top: 1px solid #CCCCCC;
+    border-right: 1px solid #333333;
+    border-bottom: 1px solid #333333;
+    border-left: 1px solid #CCCCCC;
+    width: 100%;
+    max-width: 200px;
+    margin: auto;
+    margin-top: 15px;
+    float: center;
+}
+
+.link-btn:hover {
+  
+    color: white;
+}
+
+body {
+    background-color:;
+}
