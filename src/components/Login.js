@@ -106,7 +106,7 @@ function Login(props) {
 
             <button disabled={buttonDisabled} className='btn btn-primary btn-lg btn-block mt-3 mb-3 ' > Login </button>
 
-            <div className='text-center pt3'>Need to sign up? Click Register Below</div>
+            <div className='text-center pt3'>Need an account?</div>
 
             <Link className='btn btn-primary btn-lg btn-block mt-3 mb-3 ' to="/register">Register</Link>
 
