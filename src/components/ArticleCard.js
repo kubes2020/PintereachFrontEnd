@@ -1,6 +1,8 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
+//change for commit
+
 const ArticleCard = props => {
 
     return (
