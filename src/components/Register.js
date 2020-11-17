@@ -3,6 +3,7 @@ import * as yup from 'yup'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import '../style/login.css'
 import Axios from 'axios'
+import { Link } from 'react-router-dom'
 
 const formSchema = yup.object().shape({
     email: yup.string().email('Must be a valid email'),
@@ -75,7 +76,6 @@ const Register = (props) => {
                 console.log(res)
             })
 
-
     }
 
     const [buttonDisabled, setButtonDisabled] = useState(true)
@@ -125,6 +125,10 @@ const Register = (props) => {
             </div>
 
             <button disabled = {buttonDisabled} className='btn btn-primary btn-lg btn-block mt-3 mb-3' > Confirm Registration </button>
+
+            <div className='text-center pt3'>Have an account?</div>
+            
+            <Link className='btn btn-primary btn-lg btn-block mt-3 mb-3 ' to="/login">Login</Link>
 
         </form>
 

@@ -9,6 +9,7 @@ import Axios from 'axios'
 
 import { login } from '../actions'
 import { connect } from 'react-redux'
+import { Link } from 'react-router-dom'
 
 function Login(props) {
 
@@ -38,6 +39,7 @@ function Login(props) {
                 console.log(res.data)
                 props.login(res.data)
             })
+        props.history.push('/protected')
     }
 
     const validateChange = e => {
@@ -106,7 +108,7 @@ function Login(props) {
 
             <div className='text-center pt3'>Need to sign up? Click Register Below</div>
 
-            <button type='button' className='btn btn-primary btn-lg btn-block mt-3 mb-3 '>Register</button>
+            <Link className='btn btn-primary btn-lg btn-block mt-3 mb-3 ' to="/register">Register</Link>
 
         </form>
 

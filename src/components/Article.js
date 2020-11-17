@@ -156,13 +156,11 @@ function Article (props) {
                     <small id="ratingHelp" class="form-text text-muted">Rating 1 - 5, with 5 being the most of importance</small>
                 </div>
                     
-                <button type='button' className='btn btn-primary btn-lg btn-block mt-5 mb-5 ' disabled={buttonDisabled}>Add Article</button>  
 
-            
+                <button className='btn btn-primary btn-lg btn-block mt-5 mb-5 ' >Add Article</button>  
+           
     
-            </form>
-
-            
+            </form>         
 
             
     )
