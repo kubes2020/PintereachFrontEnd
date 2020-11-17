@@ -5,12 +5,14 @@ const ArticleCard = props => {
     return (
 
         <div>
-            <h1>ArticleName</h1>
-            <p>ArticleUrl.com</p>
-            <p>Rating of 5</p>
-            <p>Category: Technology</p>
+            <h1>{props.art_name}</h1>
+            <p>{props.art_url}</p>
+            <p>{props.rating}</p>
+            <p>{props.category}</p>
         </div>
 
     )
 
 }
+
+export default ArticleCard
