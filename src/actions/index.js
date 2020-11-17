@@ -1,4 +1,3 @@
-import Axios from "axios"
 import { axiosWithAuth } from "../utils/axiosWithAuth"
 
 export const LOGIN = 'login_action'
@@ -9,6 +8,8 @@ export const ADD_ARTICLE = 'add_article_action'
 export const FETCH_DATA = 'fetch_data'
 export const FETCH_DATA_SUCCESS = 'fetch_data_success'
 export const FETCH_DATA_FAIL = 'fetch_data_fail'
+
+export const DELETE_ARTICLE = 'delete_action'
 
 // Fetch Data, after login is finished, dispatch this function
 // export const getData = () => (dispatch) => {
@@ -61,4 +62,9 @@ export const fetchData = () => (dispatch) => {
         console.log(res.data.data, id)
         dispatch({ type: FETCH_DATA_SUCCESS, payload: res.data.data })
     })
+}
+
+export const deleteArticle = (id) => (dispatch) => {
+    dispatch({ type: DELETE_ARTICLE, payload: id })
+
 }

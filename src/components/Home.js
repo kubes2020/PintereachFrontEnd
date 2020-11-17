@@ -2,11 +2,11 @@ import { connect } from "react-redux"
 import { Link } from "react-router-dom"
 import ArticleList from "./ArticleList"
 
-function Home () {
+function Home() {
     return (
         <>
-        <Link to ="/add">Add article</Link>
-        <ArticleList></ArticleList>
+            <Link to="/add">Add article</Link>
+            <ArticleList></ArticleList>
         </>
     )
 }
@@ -18,4 +18,4 @@ const mapStateToProps = (state) => {
     }
 }
 
-export default connect(mapStateToProps) (Home)
+export default connect(mapStateToProps)(Home)

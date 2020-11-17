@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export default function Marketing () {
     return (
         <div>
@@ -11,7 +13,7 @@ export default function Marketing () {
                     </p>
                     <ul className="actions">
                         <li>
-                            <a href="/login" className="button primary icon solid fa-sign-in-alt">Login</a>
+                            <Link to="/login" className="button primary icon solid fa-sign-in-alt">Login</Link>
                         </li>
                         <li>
                             <a href="#one" className="button icon solid fa-chevron-down scrolly">Learn More</a>
