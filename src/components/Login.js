@@ -39,7 +39,7 @@ function Login(props) {
                 console.log(res.data)
                 props.login(res.data)
             })
-        props.history.push('/protected')
+        props.history.push('/home')
     }
 
     const validateChange = e => {

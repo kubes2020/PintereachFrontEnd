@@ -29,9 +29,36 @@ export const FETCH_DATA_FAIL = 'fetch_data_fail'
 export const login = (user) => (dispatch) => {
     dispatch({ type: LOGIN, payload: user })
     localStorage.setItem('token', user.token)
+    localStorage.setItem('id', user.user.id)
 }
 
 export const logout = () => (dispatch) => {
     localStorage.removeItem('token')
     dispatch({ type: LOGOUT })
+}
+
+export const addArticle = (info) => (dispatch) => {
+    dispatch({ type: ADD_ARTICLE, payload: info })
+
+    const id = localStorage.getItem('id')
+
+    axiosWithAuth().post(`arts/${id}`, info)
+        .then((res) => {
+            console.log(res.data)
+        })
+        .catch((err) => {
+            console.log(err)
+        })
+
+}
+
+export const fetchData = () => (dispatch) => {
+    dispatch({ type: FETCH_DATA })
+
+    const id = localStorage.getItem('id')
+
+    axiosWithAuth().get(`arts/${id}`).then((res) => {
+        console.log(res.data.data, id)
+        dispatch({ type: FETCH_DATA_SUCCESS, payload: res.data.data })
+    })
 }

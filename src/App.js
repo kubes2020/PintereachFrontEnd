@@ -13,6 +13,7 @@ import Register from './components/Register.js'
 import Login from './components/Login'
 import Home from './components/Home';
 import PrivateRoute from './components/PrivateRoute'
+import Article from './components/Article';
 
 const store = createStore(rootReducer, applyMiddleware(thunk))
 
@@ -25,7 +26,8 @@ function App() {
       <Route path="/register" render={(props) => {
         return <Register {...props} />
       }} />
-      <PrivateRoute exact path="/protected" component={Home} />
+      <PrivateRoute exact path="/home" component={Home} />
+      <PrivateRoute exact path="/add" component={Article} />
       <Route exact path="/">
         <Marketing></Marketing>
       </Route>
