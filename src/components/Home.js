@@ -1,7 +1,6 @@
 import { connect } from "react-redux"
-import {getData} from '../actions'
 
-export default function Home () {
+function Home () {
     return (
         <div>
             Placeholder
@@ -16,4 +15,4 @@ const mapStateToProps = (state) => {
     }
 }
 
-export default connect(mapStateToProps, {getData}) (Home)
+export default connect(mapStateToProps) (Home)

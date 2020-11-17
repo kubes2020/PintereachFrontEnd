@@ -25,13 +25,13 @@ export const FETCH_DATA_FAIL = 'fetch_data_fail'
 //         .catch(err => console.log(err))
 // }
 
+// Login & Logout management
 export const login = (user) => (dispatch) => {
-    dispatch({ type: LOGIN, payload:user })
-    // console.log(user.token)
+    dispatch({ type: LOGIN, payload: user })
     localStorage.setItem('token', user.token)
 }
 
-export const logout = () => {
+export const logout = () => (dispatch) => {
     localStorage.removeItem('token')
-    dispatch({type: LOGOUT})
+    dispatch({ type: LOGOUT })
 }
