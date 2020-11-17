@@ -115,18 +115,18 @@ function Article(props) {
                 <label for="catagory">Catgory:  </label>
                 <select class="form-control" id="catagory" onChange={onChange} name='catagory'>                   
                     <option value=''>---Select a Catagory---</option>
-                    <option value='automotive'>Automotive</option>
-                    <option value='economics'>Economics</option>
-                    <option value='education'>Education</option>
-                    <option value='humor'>Humor</option>
-                    <option value='hobbies'>Hobbies</option>
-                    <option value='movies'>Movies</option>
-                    <option value='music'>Music</option>
-                    <option value='news'>News</option>
-                    <option value='politics'>Politics</option>
-                    <option value='sports'>Sports</option>
-                    <option value='technology'>Technology</option>
-                    <option value='other'>Other</option>
+                    <option value='Automotive'>Automotive</option>
+                    <option value='Economics'>Economics</option>
+                    <option value='Education'>Education</option>
+                    <option value='Humor'>Humor</option>
+                    <option value='Hobbies'>Hobbies</option>
+                    <option value='Movies'>Movies</option>
+                    <option value='Music'>Music</option>
+                    <option value='News'>News</option>
+                    <option value='Politics'>Politics</option>
+                    <option value='Sports'>Sports</option>
+                    <option value='Technology'>Technology</option>
+                    <option value='Other'>Other</option>
                 </select>
             </div>
 
