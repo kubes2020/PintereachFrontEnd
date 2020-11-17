@@ -12,9 +12,6 @@ const formSchema = yup.object().shape({
 
 const Register = (props) => {
 
-    // const [newUsers, setNewUsers] = useState([])
-    //name, art url, rating, category 
-
     const [user, setUser] = useState({
         email: '',
         password: ''
@@ -62,7 +59,6 @@ const Register = (props) => {
         setUser({
             ...user, [event.target.name]: value
         })
-
     }
 
     const formSubmit = event => {
@@ -76,7 +72,6 @@ const Register = (props) => {
             .catch((res) => {
                 console.log(res)
             })
-
     }
 
     const [buttonDisabled, setButtonDisabled] = useState(true)
@@ -104,7 +99,6 @@ const Register = (props) => {
                         value={user.email}
                         onChange={inputChange}
                     />
-
                     { errors.email.length > 0 ? ( <p className='error' > { errors.email } </p> ) : null  }
             </div>
 
@@ -120,9 +114,7 @@ const Register = (props) => {
                         onChange={inputChange}
                     />
 
-                    {errors.password.length > 0 ? (<p className='error' > { errors.password} </p>) : null}
-
-                
+                    {errors.password.length > 0 ? (<p className='error' > { errors.password} </p>) : null}    
             </div>
 
             <button disabled = {buttonDisabled} className='btn btn-primary btn-lg btn-block mt-3 mb-3' > Confirm Registration </button>
@@ -130,11 +122,8 @@ const Register = (props) => {
             <div className='text-center pt3'>Have an account?</div>
             
             <Link className='btn btn-primary btn-lg btn-block mt-3 mb-3 ' to="/login">Login</Link>
-
         </form>
-
     )
 }
-
 
 export default Register

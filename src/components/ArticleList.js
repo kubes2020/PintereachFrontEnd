@@ -13,10 +13,8 @@ function ArticleList(props) {
         fetch()
     }, [])
 
-    //art_url = {item.art_url}
-
     return (
-        <div>
+        <div className='test'>
             {props.articles.map((item)=>{
                 return (
                     <ArticleCard 
