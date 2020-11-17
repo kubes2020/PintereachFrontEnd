@@ -6,10 +6,7 @@ import AddArticle from '../validation/Article_Schema'
 
 
 function Article (props) {
-
-   
-
-   
+ 
     
     const [ buttonDisabled, setButtonDisabled ] = useState(true)
 
@@ -157,7 +154,7 @@ function Article (props) {
                 </div>
                     
 
-                <button className='btn btn-primary btn-lg btn-block mt-5 mb-5 ' >Add Article</button>  
+                <button className='btn btn-primary btn-lg btn-block mt-5 mb-5 ' disabled={buttonDisabled}>Add Article</button>  
            
     
             </form>         
