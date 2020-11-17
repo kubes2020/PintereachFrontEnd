@@ -12,6 +12,7 @@ const formSchema = yup.object().shape({
 const Register = (props) => {
 
     // const [newUsers, setNewUsers] = useState([])
+    //name, art url, rating, category 
 
     const [user, setUser] = useState({
         email: '',
