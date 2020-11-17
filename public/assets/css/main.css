@@ -3994,10 +3994,7 @@ table.alt tbody tr td {
 #header .content .actions {
   -moz-justify-content: -moz-flex-end;
   -webkit-justify-content: -webkit-flex-end;
-  -ms-justify-content: -ms-flex-end;
-  justify-content: flex-end;
-}
-
+  -ms-justify-content: -ms-flex-end;transition
 #header .image {
   -moz-transition: opacity 1s ease, -moz-transform 1s ease;
   -webkit-transition: opacity 1s ease, -webkit-transform 1s ease;
@@ -4034,10 +4031,7 @@ table.alt tbody tr td {
     min-height: 0;
   }
 
-  #header .content {
-    margin: -2em 4em 0 0;
-  }
-
+  #header .content {transition
   #header .content .actions {
     -moz-justify-content: center;
     -webkit-justify-content: center;
