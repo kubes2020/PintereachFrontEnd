@@ -108,6 +108,7 @@ function Article(props) {
                     onChange={onChange}
                     value={newArticle.articleURL}
                     placeholder='Enter the article url' />
+                <small id="urlHelp" class="form-text text-muted text-center">Example: https:\\www.yoursite.com\article</small>
 
             </div>
 
@@ -140,7 +141,7 @@ function Article(props) {
                     <option value='2'>2</option>
                     <option value='1'>1</option>
                 </select>
-                <small id="ratingHelp" class="form-text text-muted">Rating 1 - 5, with 5 being the most of importance</small>
+                <small id="ratingHelp" class="form-text text-muted text-center">Rating 1 - 5, with 5 being the most of importance</small>
             </div>
 
 
