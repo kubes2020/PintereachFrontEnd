@@ -65,7 +65,7 @@ function App() {
       <MainNav>
         <div className="navcontainer">
           <NavLink to="/">Home</NavLink>
-          {isLoggedIn ? <NavLink to="/Article">Add Articles</NavLink> : null}
+          {isLoggedIn ? <NavLink to="/add">Add Articles</NavLink> : null}
           {isLoggedIn ? null : <NavLink to="/Register">Register</NavLink>}
           {isLoggedIn ? <NavLink to="/" onClick={handleLogOut}>Logout</NavLink> : <NavLink to="/Login">Login</NavLink> }
         </div>
