@@ -19,7 +19,7 @@
 
 .items-container{
   display: flex;
-  width: 30%;
+  width: 45%;
   justify-content: space-between;
   flex-wrap: wrap;
   margin-right: 2%;
