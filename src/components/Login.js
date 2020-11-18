@@ -39,6 +39,8 @@ function Login(props) {
                 console.log(res.data)
                 props.login(res.data)
                 props.history.push('/home')
+            }).catch((res)=>{
+                console.log(res)
             })
     }
 
