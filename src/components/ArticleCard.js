@@ -21,7 +21,7 @@ const ArticleCard = props => {
                         <p className='card-text'>Rating: <span className='props'>{props.rating}</span></p>
                         <p className='card-text'>Category: <span className='props'>{props.category}</span></p>
                         <p className='card-text'>URL: <span className='props'>{props.art_url}</span></p>
-                        <a href={props.art_url} className='blue-button btn btn-primary'>Goto Article</a>
+                        <a href={props.art_url} className='blue-button btn btn-primary' rel = 'noreferrer' target='_blank' >Goto Article</a>
                     </div>
                 </div>
             </div>
