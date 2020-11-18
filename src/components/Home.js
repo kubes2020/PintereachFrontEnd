@@ -6,11 +6,10 @@ import '../style/home.css'
 function Home() {
     return (
         <>
-           
-                <Link className='btn btn-info btn-lg btn-block mt-3 mb-3'to="/add">Add an article</Link>
-            
+           <div>
+                <Link className='link-btn'to="/add">Add an article</Link>
                 <ArticleList></ArticleList>
-              
+           </div>  
         </>
     )
 }
