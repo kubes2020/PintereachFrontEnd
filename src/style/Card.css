@@ -1,15 +1,11 @@
 .card-container {
-  width: 50%;
+  width: 30%;
   margin-top: 1rem;
   text-align: center;
-
 }
 
 .card {
   height: 100%;
-}
-
-.card-body {
   background-color: #fbfbfb;
 }
 
@@ -28,8 +24,14 @@ h1 {
   font-weight: bold;
 }
 
-.test{
+.test {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
+}
+
+.delete-button {
+  display: flex;
+  justify-content: flex-end;
+  align-self: flex-end;
 }
