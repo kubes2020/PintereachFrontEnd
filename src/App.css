@@ -1,21 +1,32 @@
 .navcontainer {
     background-color:#4695e3;
     height: 70px;
-    
-    
 }
-
   .navbar-logo {
     color: #fff;
-    justify-self: start;
-    margin-left: 20px;
+    /* margin-left: 20px; */
     cursor: pointer;
     text-decoration: none;
     font-size: 1.9rem;
-    padding-right: 70rem;
+    /* padding-right: 70rem; */
     border:none;
+    font-weight: bold;
   }
 
 .navbar-logo:hover {
     text-decoration: none;
+}
+
+.items-container{
+  display: flex;
+  width: 30%;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-right: 2%;
+}
+
+@media(max-width:800px){
+  .items-container{
+    flex-direction: column;
+  }
 }

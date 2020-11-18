@@ -21,42 +21,41 @@ const store = createStore(rootReducer, applyMiddleware(thunk))
 
 const MainNav = styled.nav`
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     font-size: 1.2rem;
     position: sticky;
     top: 0;
     z-index: 999;
     background-color: #4695e3;
-  text-align: right;
-  @media (max-width: 400px){
+    max-width: 100%;
+    text-align: right;
+
+  @media (max-width: 800px){
     text-align: center;
+    flex-direction: column;
   }
 `
+
 const NavLink = styled(Link)`
-  border:none;
-  text-decoration:none;
   border: none;
+  text-decoration: none;
+  border: none;
+
   padding: .4% 2%;
-  padding-top:3%;
   color: white;
-  min-width: 150px;
-  margin: .2%;
-  height:30px;
+
   font-size: 1.3rem;
-  justify-content: center;
   
   &:hover {
     color: white;
     transition: all 0.5s ease-in-out;
   }
-  @media (max-width: 400px){
-    font-size: 1rem;
-    flex-direction: column;
-  }
-  
-`
 
+  @media (max-width: 800px){
+    font-size: 1rem;
+  }
+`
 
 function App() {
 
@@ -71,15 +70,18 @@ function App() {
 
   return (
     <>
-      <MainNav>
-        <div className="navcontainer">
-        <Link to="/" className="navbar-logo">Pintereach</Link>
+      <MainNav className="navcontainer">
+
+        <NavLink to="/" className="navbar-logo">Pintereach</NavLink>
+
+        <div className="items-container">
           <NavLink to="/">Home</NavLink>
           {isLoggedIn ? <NavLink to="/add">Add Articles</NavLink> : null}
           {isLoggedIn ? <NavLink to="/home">Saved Articles</NavLink> : null}
-          {isLoggedIn ? null : <NavLink to="/Register">Register</NavLink>}
-          {isLoggedIn ? <NavLink to="/" onClick={handleLogOut}>Logout</NavLink> : <NavLink to="/Login">Login</NavLink> }
+          {isLoggedIn ? null : <NavLink to="/register">Register</NavLink>}
+          {isLoggedIn ? <NavLink to="/" onClick={handleLogOut}>Logout</NavLink> : <NavLink to="/Login">Login</NavLink>}
         </div>
+
       </MainNav>
       <Provider store={store}>
         <Route path="/login" render={(props) => {
