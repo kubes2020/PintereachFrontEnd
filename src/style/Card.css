@@ -1,0 +1,35 @@
+.card-container {
+  width: 50%;
+  margin-top: 1rem;
+  text-align: center;
+
+}
+
+.card {
+  height: 100%;
+}
+
+.card-body {
+  background-color: #fbfbfb;
+}
+
+h1 {
+  color: blueviolet;
+  font-weight: bold;
+}
+
+.card-text {
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: x-large;
+}
+
+.card-text span {
+  font-family: "Times New Roman", Times, serif;
+  font-weight: bold;
+}
+
+.test{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}

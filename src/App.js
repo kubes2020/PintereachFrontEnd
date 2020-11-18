@@ -28,6 +28,7 @@ const MainNav = styled.nav`
 const NavLink = styled(Link)`
   border:none;
   text-decoration:none;
+  border: none;
   padding: .4% 2%;
   padding-top:3%;
   color: white;
