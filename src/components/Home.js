@@ -6,8 +6,8 @@ import '../style/home.css'
 function Home() {
     return (
         <>
-            <div className='link-btn'>
-                <Link to="/add">Add an article</Link>
+            <div>
+                <Link  className='link-btn' to="/add">Add an article</Link>
                 <ArticleList></ArticleList>
             </div>
         </>
