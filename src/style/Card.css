@@ -34,4 +34,12 @@ h1 {
   display: flex;
   justify-content: flex-end;
   align-self: flex-end;
+  height: 2rem;
+  width: 3.3rem;
+  /* background-color: aqua; */
+  border-color: white;
+}
+
+.blue-button {
+  background-color: #4696E5;
 }

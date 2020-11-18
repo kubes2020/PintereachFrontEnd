@@ -15,13 +15,13 @@ const ArticleCard = props => {
     return (
             <div className='card-container'>
                 <div className='card'>
-                        <button onClick={del} className='btn btn-danger delete-button'><span className="fas fa-times mr-2"></span>Delete Article</button>
+                        <button onClick={del} id='test' className='btn btn-outline-danger delete-button'><span className="fas fa-times mr-2"></span></button>
                     <div className='card-body'>
                         <h1 className='card-title'><span className='props'>{props.art_name}</span></h1>
                         <p className='card-text'>Rating: <span className='props'>{props.rating}</span></p>
                         <p className='card-text'>Category: <span className='props'>{props.category}</span></p>
                         <p className='card-text'>URL: <span className='props'>{props.art_url}</span></p>
-                        <a href='https:///google.com' className='btn btn-primary'>Goto Article</a>
+                        <a href='https:///google.com' className='blue-button btn btn-primary'>Goto Article</a>
                     </div>
                 </div>
             </div>
