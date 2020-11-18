@@ -38,6 +38,7 @@ function Login(props) {
             .then((res) => {
                 console.log(res.data)
                 props.login(res.data)
+                props.setLoggedIn(true)
                 props.history.push('/home')
             }).catch((res)=>{
                 console.log(res)

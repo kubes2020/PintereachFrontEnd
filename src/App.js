@@ -50,40 +50,39 @@ const NavLink = styled(Link)`
 
 
 function App() {
-  const [isLoggedIn, setIsLoggedIn] = useState(false)
+
+  const [isLoggedIn, setLoggedIn] = useState(false)
   const history = useHistory()
 
-  const handleLogOut = () =>{
+  const handleLogOut = () => {
     localStorage.clear()
-    setIsLoggedIn(false)
     history.push("/")
+    setLoggedIn(false)
   }
-
 
   return (
     <>
-    <MainNav>
-      <div className="navcontainer">
-        {<NavLink to="/">Home</NavLink>}
-        {isLoggedIn ? <NavLink to="/Article">Add Articles</NavLink> : null}
-        {/* {isLoggedIn ? <Link to="/ArticleCard">Saved Articles</Link> : null} */}
-        {isLoggedIn ? null : <NavLink to="/Register">Register</NavLink>}
-        {localStorage.getItem('token') === null? <NavLink to="/" onClick={ handleLogOut }>Logout</NavLink> : <NavLink to="/Login">Login</NavLink> } 
-      </div>
-    </MainNav>
-    <Provider store={store}>
-      <Route path="/login" render={(props) => {
-        return <Login {...props} />
-      }} />
-      <Route path="/register" render={(props) => {
-        return <Register {...props} />
-      }} />
-      <PrivateRoute exact path="/home" component={Home} />
-      <PrivateRoute exact path="/add" component={Article} />
-      <Route exact path="/">
-        <Marketing></Marketing>
-      </Route>
-    </Provider>
+      <MainNav>
+        <div className="navcontainer">
+          <NavLink to="/">Home</NavLink>
+          {isLoggedIn ? <NavLink to="/Article">Add Articles</NavLink> : null}
+          {isLoggedIn ? null : <NavLink to="/Register">Register</NavLink>}
+          {isLoggedIn ? <NavLink to="/" onClick={handleLogOut}>Logout</NavLink> : <NavLink to="/Login">Login</NavLink> }
+        </div>
+      </MainNav>
+      <Provider store={store}>
+        <Route path="/login" render={(props) => {
+          return <Login setLoggedIn={setLoggedIn} {...props} />
+        }} />
+        <Route path="/register" render={(props) => {
+          return <Register {...props} />
+        }} />
+        <PrivateRoute exact path="/home" component={Home} />
+        <PrivateRoute exact path="/add" component={Article} />
+        <Route exact path="/">
+          <Marketing></Marketing>
+        </Route>
+      </Provider>
     </>
   );
 }
