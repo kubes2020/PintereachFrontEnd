@@ -26,6 +26,7 @@ const MainNav = styled.nav`
   }
 `
 const NavLink = styled(Link)`
+  border:none;
   text-decoration:none;
   border: none;
   padding: .4% 2%;
@@ -63,12 +64,11 @@ function App() {
     <>
     <MainNav>
       <div className="navcontainer">
-        {isLoggedIn ? <NavLink to="/">Home</NavLink> : null}
+        {<NavLink to="/">Home</NavLink>}
         {isLoggedIn ? <NavLink to="/Article">Add Articles</NavLink> : null}
         {/* {isLoggedIn ? <Link to="/ArticleCard">Saved Articles</Link> : null} */}
-        {isLoggedIn ? null : <NavLink to="/Login">Login</NavLink>}
         {isLoggedIn ? null : <NavLink to="/Register">Register</NavLink>}
-        {isLoggedIn ? <NavLink to="/" onClick={ handleLogOut }>Logout</NavLink> : null} 
+        {localStorage.getItem('token') === null? <NavLink to="/" onClick={ handleLogOut }>Logout</NavLink> : <NavLink to="/Login">Login</NavLink> } 
       </div>
     </MainNav>
     <Provider store={store}>
