@@ -20,6 +20,14 @@ import styled from "styled-components";
 const store = createStore(rootReducer, applyMiddleware(thunk))
 
 const MainNav = styled.nav`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    background-color: #4695e3;
   text-align: right;
   @media (max-width: 400px){
     text-align: center;
@@ -35,8 +43,9 @@ const NavLink = styled(Link)`
   min-width: 150px;
   margin: .2%;
   height:30px;
-  font-size: 0.9rem;
+  font-size: 1.3rem;
   justify-content: center;
+  
   &:hover {
     color: white;
     transition: all 0.5s ease-in-out;
@@ -64,8 +73,10 @@ function App() {
     <>
       <MainNav>
         <div className="navcontainer">
+        <Link to="/" className="navbar-logo">Pintereach</Link>
           <NavLink to="/">Home</NavLink>
           {isLoggedIn ? <NavLink to="/add">Add Articles</NavLink> : null}
+          {isLoggedIn ? <NavLink to="/home">Saved Articles</NavLink> : null}
           {isLoggedIn ? null : <NavLink to="/Register">Register</NavLink>}
           {isLoggedIn ? <NavLink to="/" onClick={handleLogOut}>Logout</NavLink> : <NavLink to="/Login">Login</NavLink> }
         </div>
