@@ -14,14 +14,14 @@ function Article(props) {
     const [newArticle, setNewArticle] = useState({
         articleName: '',
         articleURL: '',
-        catagory: '',
+        category: '',
         rating: ''
     })
 
     const [errors, setErrors] = useState({
         articleName: '',
         articleURL: '',
-        catagory: '',
+        category: '',
         rating: ''
     })
 
@@ -71,7 +71,7 @@ function Article(props) {
             art_name: newArticle.articleName,
             art_url: newArticle.articleURL,
             rating: newArticle.rating,
-            category: newArticle.catagory
+            category: newArticle.category
         })
 
         props.history.push('/home')
@@ -113,9 +113,9 @@ function Article(props) {
             </div>
 
             <div class="form-group">
-                <label for="catagory">Catgory:  </label>
-                <select class="form-control" id="catagory" onChange={onChange} name='catagory'>                   
-                    <option value=''>---Select a Catagory---</option>
+                <label for="category">Catgory:  </label>
+                <select class="form-control" id="category" onChange={onChange} name='category'>                   
+                    <option value=''>---Select a Category---</option>
                     <option value='Automotive'>Automotive</option>
                     <option value='Books'>Books</option>
                     <option value='Economics'>Economics</option>
@@ -131,7 +131,7 @@ function Article(props) {
                     <option value='Resturants'>Restaurants</option>
                     <option value='Sports'>Sports</option>
                     <option value='Technology'>Technology</option>
-                    <option value='Tv Shows'>Tv Shows</option>
+                    <option value='TV Shows'>TV Shows</option>
                     <option value='Other'>Other</option>
                 </select>
             </div>

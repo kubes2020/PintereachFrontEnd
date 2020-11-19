@@ -10,9 +10,9 @@ const AddArticle = yup.object().shape ({
         .string()
         .required('Article URL is required'),
 
-    catagory: yup
+    category: yup
         .string()
-        .oneOf(['Automotive', 'Economics', 'Education', 'Humor', 'Hobbies', 'Music', 'News', 'Politics', 'Sports', 'Technology', 'Other']),
+        .oneOf(['Automotive', 'Books', 'Economics', 'Education', 'Gaming', 'Humor', 'Hobbies', 'Movies', 'Music', 'News', 'Politics', 'Recipes', 'Resturants' 'Sports', 'Technology', 'TV Shows' 'Other']),
 
     rating: yup
         .string()
