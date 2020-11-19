@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import ArticleCard from './ArticleCard';
+import '../style/filter.css'
+import '../style/login.css'
 const { connect } = require("react-redux");
 const { fetchData, filterArticles } = require("../actions");
 
@@ -35,7 +37,7 @@ function ArticleList(props) {
         <>
             <form onSubmit={submit}>
                 <div className="form-group">
-                    <label for="category">Catgory:  </label>
+                    <label for="category">Category:  </label>
                     <select class="form-control" id="category" onChange={handleChanges} name='category'>
                         <option value=''>---Select a Category---</option>
                         <option value='Automotive'>Automotive</option>
@@ -58,7 +60,7 @@ function ArticleList(props) {
                     </select>
                 </div>
                 <Link onClick={reset} className="btn btn-danger"> Reset </Link>
-                <button>Search</button>
+                <button className="blue-button btn btn-primary">Search</button>
             </form>
             <div className='test'>
                 {props.articles.map((item) => {

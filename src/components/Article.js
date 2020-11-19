@@ -75,7 +75,7 @@ function Article(props) {
         })
 
         props.history.push('/home')
-    }
+    }   
 
     return (
 
@@ -85,7 +85,6 @@ function Article(props) {
             </h1>
 
             <h2 className='text-center'>Add An Article</h2>
-
 
             <div className='form-group'>
                 <label for='article-name' >Article Name:</label>
@@ -113,7 +112,7 @@ function Article(props) {
             </div>
 
             <div class="form-group">
-                <label for="category">Catgory:  </label>
+                <label for="category">Category:  </label>
                 <select class="form-control" id="category" onChange={onChange} name='category'>                   
                     <option value=''>---Select a Category---</option>
                     <option value='Automotive'>Automotive</option>
