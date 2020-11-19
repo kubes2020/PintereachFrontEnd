@@ -10,6 +10,7 @@ export const FETCH_DATA_SUCCESS = 'fetch_data_success'
 export const FETCH_DATA_FAIL = 'fetch_data_fail'
 
 export const DELETE_ARTICLE = 'delete_action'
+export const FILTER = 'filter_action'
 
 // Fetch Data, after login is finished, dispatch this function
 // export const getData = () => (dispatch) => {
@@ -76,4 +77,8 @@ export const deleteArticle = (id) => (dispatch) => {
         .then((res) => {
             console.log(res.data)
         })
+}
+
+export const filterArticles = (category) => {
+    return { type: FILTER, payload: category }
 }

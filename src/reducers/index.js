@@ -1,5 +1,5 @@
 import { act } from 'react-dom/test-utils'
-import { ADD_ARTICLE, DELETE_ARTICLE, FETCH_DATA, FETCH_DATA_SUCCESS, LOGIN, LOGOUT, REGISTER } from '../actions'
+import { ADD_ARTICLE, DELETE_ARTICLE, FETCH_DATA, FETCH_DATA_SUCCESS, FILTER, LOGIN, LOGOUT, REGISTER } from '../actions'
 
 const initialState = {
     articles: [],
@@ -14,13 +14,13 @@ export const rootReducer = (state = initialState, action) => {
             // console.log(action.payload.id)
             return {
                 ...state,
-                isLoading:false
+                isLoading: false
             }
 
         case LOGOUT:
             return {
                 articles: [],
-                isLoading:false
+                isLoading: false
             }
 
         case FETCH_DATA:
@@ -46,17 +46,27 @@ export const rootReducer = (state = initialState, action) => {
                 isLoading: false
             }
 
-        case DELETE_ARTICLE: 
+        case DELETE_ARTICLE:
             console.log(action.payload, 'id')
-            const filteredArticles= state.articles.filter((item)=>{
+            const filteredArticles = state.articles.filter((item) => {
                 // console.log(item)
                 console.log(item.id)
-                return item.id!==action.payload
+                return item.id !== action.payload
             })
             console.log('filtered articles', filteredArticles)
             return {
                 ...state,
                 articles: filteredArticles
+            }
+
+        case FILTER:
+            const filtered = state.articles.filter((item) => {
+                return item.category===action.payload
+            })
+
+            return {
+                ...state,
+                articles: filtered
             }
 
         default:
