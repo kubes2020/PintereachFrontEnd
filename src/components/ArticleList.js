@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import ArticleCard from './ArticleCard';
 const { connect } = require("react-redux");
 const { fetchData, filterArticles } = require("../actions");
@@ -23,6 +24,11 @@ function ArticleList(props) {
     const submit = e => {
         e.preventDefault()
         props.filterArticles(search)
+    }
+
+    const reset = e => {
+        e.preventDefault()
+        props.filterArticles('')
     }
 
     return (
@@ -51,6 +57,7 @@ function ArticleList(props) {
                         <option value='Other'>Other</option>
                     </select>
                 </div>
+                <Link onClick={reset} className="btn btn-danger"> Reset </Link>
                 <button>Search</button>
             </form>
             <div className='test'>

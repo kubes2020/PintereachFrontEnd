@@ -60,13 +60,22 @@ export const rootReducer = (state = initialState, action) => {
             }
 
         case FILTER:
+
+            if (action.payload==='' && state.unfiltered!=undefined){
+                return {
+                    ...state,
+                    articles: state.unfiltered
+                }
+            }
+
             const filtered = state.articles.filter((item) => {
                 return item.category===action.payload
             })
 
             return {
                 ...state,
-                articles: filtered
+                articles: filtered,
+                unfiltered: state.articles
             }
 
         default:
