@@ -128,7 +128,7 @@ function Article(props) {
                     <option value='News'>News</option>
                     <option value='Politics'>Politics</option>
                     <option value='Recipes'>Recipes</option>
-                    <option value='Resturants'>Restaurants</option>
+                    <option value='Restaurants'>Restaurants</option>
                     <option value='Sports'>Sports</option>
                     <option value='Technology'>Technology</option>
                     <option value='TV Shows'>TV Shows</option>

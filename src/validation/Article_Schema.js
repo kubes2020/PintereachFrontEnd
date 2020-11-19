@@ -12,7 +12,7 @@ const AddArticle = yup.object().shape ({
 
     category: yup
         .string()
-        .oneOf(['Automotive', 'Books', 'Economics', 'Education', 'Gaming', 'Humor', 'Hobbies', 'Movies', 'Music', 'News', 'Politics', 'Recipes', 'Resturants' 'Sports', 'Technology', 'TV Shows' 'Other']),
+        .oneOf(['Automotive', 'Books', 'Economics', 'Education', 'Gaming', 'Humor', 'Hobbies', 'Movies', 'Music', 'News', 'Politics', 'Recipes', 'Restaurants', 'Sports', 'Technology', 'TV Shows', 'Other']),
 
     rating: yup
         .string()
