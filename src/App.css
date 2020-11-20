@@ -29,4 +29,8 @@
   .items-container{
     flex-direction: column;
   }
+
+  .navcontainer{
+    height: auto;
+  }
 }
