@@ -56,7 +56,8 @@ export const rootReducer = (state = initialState, action) => {
             console.log('filtered articles', filteredArticles)
             return {
                 ...state,
-                articles: filteredArticles
+                articles: filteredArticles,
+                unfiltered: filteredArticles
             }
 
         case FILTER:
