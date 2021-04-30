@@ -70,21 +70,22 @@ export const rootReducer = (state = initialState, action) => {
       };
 
     case FILTER:
-      // if (action.payload==='' && state.unfiltered!=undefined){
-      //     return {
-      //         ...state,
-      //         articles: state.unfiltered
-      //     }
-      // }
+      if (action.payload === "" && state.unfiltered != undefined) {
+        return {
+          ...state,
+          articles: state.unfiltered,
+        };
+      }
+      console.log("current articles in reducer", articles);
 
       // This is to make sure that all searches are filtering from complete list
-      if (state.unfiltered != undefined) {
-        myList = state.unfiltered;
-      } else {
-        myList = state.articles;
-      }
+      //   if (state.unfiltered != undefined) {
+      //     myList = state.unfiltered;
+      //   } else {
+      //     myList = state.articles;
+      //   }
 
-      const filtered = myList.filter((item) => {
+      const filtered = state.articles.filter((item) => {
         return item.category === action.payload;
       });
 
