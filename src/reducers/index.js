@@ -12,6 +12,7 @@ import {
 
 const initialState = {
   articles: [],
+  unfiltered: [],
   error: "",
   isLoading: false,
 };
@@ -70,13 +71,14 @@ export const rootReducer = (state = initialState, action) => {
       };
 
     case FILTER:
-      if (action.payload === "" && state.unfiltered != undefined) {
+      if (action.payload === "" && state.unfiltered != []) {
+        console.log("current articles in reducer", articles);
+        console.log("current unfiltered in reducer", unfiltered);
         return {
           ...state,
           articles: state.unfiltered,
         };
       }
-      console.log("current articles in reducer", articles);
 
       // This is to make sure that all searches are filtering from complete list
       //   if (state.unfiltered != undefined) {
