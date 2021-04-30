@@ -76,14 +76,15 @@ export const rootReducer = (state = initialState, action) => {
       //         articles: state.unfiltered
       //     }
       // }
+
+      // This is to make sure that all searches are filtering from complete list
       if (state.unfiltered != undefined) {
-        return {
-          ...state,
-          articles: state.unfiltered,
-        };
+        myList = state.unfiltered;
+      } else {
+        myList = state.articles;
       }
 
-      const filtered = state.articles.filter((item) => {
+      const filtered = myList.filter((item) => {
         return item.category === action.payload;
       });
 
