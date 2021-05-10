@@ -12,15 +12,14 @@ import {
 
 const initialState = {
     articles: [],
+    searchTerm: "",
     error: "",
     isLoading: false,
 };
 
 export const rootReducer = (state = initialState, action) => {
-    // console.log(action)
     switch (action.type) {
         case LOGIN:
-            // console.log(action.payload.id)
             return {
                 ...state,
                 isLoading: false,
@@ -46,7 +45,6 @@ export const rootReducer = (state = initialState, action) => {
             };
 
         case ADD_ARTICLE:
-            console.log(action.payload);
             const newArticles = [...state.articles];
             newArticles.push(action.payload);
             return {
@@ -56,13 +54,9 @@ export const rootReducer = (state = initialState, action) => {
             };
 
         case DELETE_ARTICLE:
-            console.log(action.payload, "id");
             const filteredArticles = state.articles.filter((item) => {
-                // console.log(item)
-                console.log(item.id);
                 return item.id !== action.payload;
             });
-            console.log("filtered articles", filteredArticles);
             return {
                 ...state,
                 articles: filteredArticles,
@@ -70,25 +64,12 @@ export const rootReducer = (state = initialState, action) => {
             };
 
         case FILTER:
-            if (action.payload === "" && state.unfiltered != undefined) {
-                return {
-                    ...state,
-                    articles: state.unfiltered,
-                };
-            }
-
-            const filtered = state.articles.filter((item) => {
-                return item.category === action.payload;
-            });
-
             return {
                 ...state,
-                articles: filtered,
-                unfiltered: state.articles,
+                searchTerm: action.payload,
             };
 
         default:
-            console.log("default");
             return state;
     }
 };

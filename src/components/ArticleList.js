@@ -21,7 +21,6 @@ function ArticleList(props) {
     };
 
     const submit = (e) => {
-        console.log("this is search state:", search);
         e.preventDefault();
         props.filterArticles(search);
     };
@@ -68,19 +67,35 @@ function ArticleList(props) {
                 </button>
                 <button className="blue-button btn btn-primary">Search</button>
             </form>
+            {/* If searchTerm is "", then map through all articles, otherwise filter articles based on searchTerm and map through results */}
             <div className="test">
-                {props.articles.map((item) => {
-                    return (
-                        <ArticleCard
-                            id={item.id}
-                            key={item.id}
-                            art_name={item.art_name}
-                            art_url={item.art_url}
-                            rating={item.rating}
-                            category={item.category}
-                        />
-                    );
-                })}
+                {props.searchTerm === ""
+                    ? props.articles.map((item) => {
+                          return (
+                              <ArticleCard
+                                  id={item.id}
+                                  key={item.id}
+                                  art_name={item.art_name}
+                                  art_url={item.art_url}
+                                  rating={item.rating}
+                                  category={item.category}
+                              />
+                          );
+                      })
+                    : props.articles
+                          .filter((art) => art.category === props.searchTerm)
+                          .map((item) => {
+                              return (
+                                  <ArticleCard
+                                      id={item.id}
+                                      key={item.id}
+                                      art_name={item.art_name}
+                                      art_url={item.art_url}
+                                      rating={item.rating}
+                                      category={item.category}
+                                  />
+                              );
+                          })}
             </div>
         </>
     );
@@ -89,6 +104,7 @@ function ArticleList(props) {
 const mapStateToProps = (state) => {
     return {
         articles: state.articles,
+        searchTerm: state.searchTerm,
         isLoading: state.isLoading,
     };
 };

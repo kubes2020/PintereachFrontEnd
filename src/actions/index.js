@@ -12,28 +12,9 @@ export const FETCH_DATA_FAIL = "fetch_data_fail";
 export const DELETE_ARTICLE = "delete_action";
 export const FILTER = "filter_action";
 
-// Fetch Data, after login is finished, dispatch this function
-// export const getData = () => (dispatch) => {
-//     dispatch({ type: FETCH_DATA })
-
-//     // REPLACE SERVERNAME WITH API CALL, depending on the data results, use id in object number
-//     axiosWithAuth().get('SERVERNAME')
-//         .then(res => {
-//             // console.log(res)
-
-//             // REPLACE DATA HERE, CHECK RES AND REPLACE
-//             dispatch({ type: FETCH_DATA_SUCCESS, payload: res.data })
-//         })
-//         .catch(err => console.log(err))
-// }
-
 // Login & Logout management
 export const login = (data) => (dispatch) => {
     dispatch({ type: LOGIN, payload: data });
-
-    // const token = data.token.slice(1,-1)
-
-    // console.log(token)
     localStorage.setItem("token", data.token);
     localStorage.setItem("id", data.user.id);
 };
@@ -51,9 +32,7 @@ export const addArticle = (info) => (dispatch) => {
 
     axiosWithAuth()
         .post(`arts/${id}`, info)
-        .then((res) => {
-            console.log(res.data);
-        })
+        .then((res) => {})
         .catch((err) => {
             console.log(err);
         });
@@ -67,7 +46,6 @@ export const fetchData = () => (dispatch) => {
     axiosWithAuth()
         .get(`arts/${id}`)
         .then((res) => {
-            console.log(res.data.data, id);
             dispatch({ type: FETCH_DATA_SUCCESS, payload: res.data.data });
         });
 };
@@ -77,9 +55,7 @@ export const deleteArticle = (id) => (dispatch) => {
 
     axiosWithAuth()
         .delete(`arts/${id}`)
-        .then((res) => {
-            console.log(res.data);
-        });
+        .then((res) => {});
 };
 
 export const filterArticles = (category) => {

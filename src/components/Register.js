@@ -70,8 +70,8 @@ const Register = (props) => {
                 props.history.push("/login");
                 alert("Registration Complete, Please Login.");
             })
-            .catch((res) => {
-                console.log(res);
+            .catch((err) => {
+                console.log(err);
             });
     };
 

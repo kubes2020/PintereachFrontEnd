@@ -32,13 +32,11 @@ function Login(props) {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        // console.log('click')
         Axios.post(
             "https://pintereacharticles.herokuapp.com/api/auth/login",
             user
         )
             .then((res) => {
-                console.log(res.data);
                 props.login(res.data);
                 props.setLoggedIn(true);
                 props.history.push("/home");
